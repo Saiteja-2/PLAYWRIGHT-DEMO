@@ -41,7 +41,9 @@ export default defineConfig({
 
     /* Trace on first retry */
     trace: 'on-first-retry',
-
+    launchOptions: {
+      slowMo:300
+    },
     /* Capture screenshot on failure */
     screenshot: 'only-on-failure',
 
