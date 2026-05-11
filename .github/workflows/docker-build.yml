@@ -1,0 +1,39 @@
+name: Docker Build
+
+on:
+  push:
+    branches: [ main, master ]
+
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+
+    steps:
+
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: Set up Docker Buildx
+      uses: docker/setup-buildx-action@v3
+
+    - name: Build Docker Image
+      run: |
+        docker build -t playwright-framework .
+
+    - name: Save Docker Image as TAR
+      run: |
+        docker save -o playwright-framework.tar playwright-framework
+
+    - name: Compress Docker Image
+      run: |
+        gzip playwright-framework.tar
+
+    - name: Upload Docker Image Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: playwright-framework-image
+        path: playwright-framework.tar.gz
+        retention-days: 30

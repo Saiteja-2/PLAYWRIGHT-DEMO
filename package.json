@@ -1,0 +1,30 @@
+{
+  "name": "playwright-demo",
+  "version": "1.0.0",
+  "description": "End-to-end test automation framework developed using Playwright with Java, demonstrating modern UI automation practices.",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test",
+    "lint": "eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Saiteja-2/PLAYWRIGHT-DEMO.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/Saiteja-2/PLAYWRIGHT-DEMO/issues"
+  },
+  "homepage": "https://github.com/Saiteja-2/PLAYWRIGHT-DEMO#readme",
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@playwright/test": "^1.59.1",
+    "@types/node": "^25.6.2",
+    "allure-commandline": "^2.40.0",
+    "allure-playwright": "^3.7.2",
+    "eslint": "^10.3.0"
+  }
+}
